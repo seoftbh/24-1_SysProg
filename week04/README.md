@@ -144,8 +144,7 @@ gcc -o hello hello.c
 - `copy.c`
 - `copy.h`
 
-[https://github.com/seoftbh/24-1_SysProg/blob/dea64672668ed644e1b1a18dda3c193d9d54531d/week04/0326/copy.h
-](https://github.com/seoftbh/24-1_SysProg/blob/dea64672668ed644e1b1a18dda3c193d9d54531d/week04/0326/copy.h#L1-L2)
+https://github.com/seoftbh/24-1_SysProg/blob/dea64672668ed644e1b1a18dda3c193d9d54531d/week04/0326/copy.h#L1-L2
 
 ## vimrc
 - Vim 편집기의 구성 설정을 담고 있는 파일
