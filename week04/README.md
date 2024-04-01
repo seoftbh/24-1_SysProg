@@ -143,8 +143,10 @@ gcc -o hello hello.c
 - `main.c`
 - `copy.c`
 - `copy.h`
+
 [https://github.com/seoftbh/24-1_SysProg/blob/dea64672668ed644e1b1a18dda3c193d9d54531d/week04/0326/copy.h
 ](https://github.com/seoftbh/24-1_SysProg/blob/dea64672668ed644e1b1a18dda3c193d9d54531d/week04/0326/copy.h#L1-L2)
+
 ## vimrc
 - Vim 편집기의 구성 설정을 담고 있는 파일
 - 동작 방식, 플러그인 설정, 키 매핑 등을 사용자가 커스터마이징 가능
