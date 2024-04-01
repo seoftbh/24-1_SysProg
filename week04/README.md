@@ -108,7 +108,7 @@ void copy(char from[], char to[])
 ```
 
 
-![long test](image2.png)
+![long test](./md/image2.png)
 
 ## 컴파일 및 실행하기
 ### 패키지 업데이트 확인 및 업데이트
@@ -150,8 +150,11 @@ gcc -o hello hello.c
 - 사용자의 홈 디렉터리에 파일을 위치시킴
 
 
+
 ---
 ---
+
+
 ## 동기 & 비동기
 - 동기와 비동기의 구분은 대상들의 시간이 맞춰지는지 유무
 - **동기**
