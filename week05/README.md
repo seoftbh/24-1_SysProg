@@ -43,6 +43,7 @@ make -v  # 버전 확인
 - 의존성 - 소스
 - 명령
 
+---
 
 ### 예제 1)
 hello.h
@@ -110,11 +111,15 @@ main.o: hello.h world.h main.c
 
 
 > [!warning]
-> 인덴트(들여쓰기)에 주의
+> **인덴트(들여쓰기)에 주의**
+>
 > `Makefile:2: *** missing separator.  Stop.`
+>
 > 소스를 가져와 붙여넣기 한 경우 들여쓰기에서 오류발생 함
+>
 > 공백을 지우고 Tab으로 교체하기
 
+---
 
 ### 예제 1-2)
 - `make clean` 기능 구현
@@ -149,6 +154,7 @@ make
 ```bash
 make clean
 ```
+---
 
 ### 예제2)
 hello.c
@@ -167,6 +173,8 @@ hello: hello.c
 ```
 
 ![예제2 - make 실행 결과 이미지](./md/image-1.png)
+
+---
 
 ### 예제 3) 조건문과 루프
 
@@ -198,6 +206,8 @@ clean:
 ```
 
 ![예제3 - make 실행 결과 이미지](./md/image-2.png)
+
+---
 
 ### 예제 4) makefile 없이 실행하기
 - 내장된 기능을 사용
@@ -231,8 +241,10 @@ make hello
 	- `make -f 파일명`
 	- 여러 버전의 Makefile 관리에 사용
 ### Makefile의 구성 형식
->[!wwarning] 들여쓰기에 유의
->띄어쓰기 대신 Tab 사용
+>[!warning] 
+> **들여쓰기에 유의**
+>
+> 띄어쓰기 대신 Tab 사용
 
 ```
 대상리스트: 의존리스트
@@ -265,6 +277,7 @@ make hello
 
 > [!note] 
 > 리눅스는 모든 디바이스를 파일로 인식함
+>
 > 모니터, 키보드, USB 등
 
 
@@ -279,8 +292,9 @@ make hello
 2. 커널로 이동해 테이블에서 `open()`의 주소를 찾음
 3. 해당 주소로 이동해 실제 `open()`코드를 실행 후 리턴됨
 
-> [!note] 프로세스
-> 현재 실행 중인 프로그램
+> [!note]
+> **프로세스**
+> : 현재 실행 중인 프로그램
 
 ### 시스템 호출 요약
 
@@ -291,6 +305,8 @@ make hello
 | 메모리       | `malloc()`, `calloc()`, `free()` 등                                |
 | 시그널       | `signal()`, `alarm()`, `kill()`, `sleep()` 등                      |
 | 프로세스 간 통신 | `pipe()`, `socket()` 등                                            |
+
+---
 
 # 파일
 ## 유닉스에서 파일
@@ -328,6 +344,7 @@ int open (const char *path, int oflag, [ mode_t mode ]);
 		- `-1` 리턴
 
 > `const` → 상수
+>
 > 헤더파일(`.h`)은 `include` 디렉터리에 있음 (정해진 경로)
 
 > (lib 디렉터리)
@@ -335,17 +352,19 @@ int open (const char *path, int oflag, [ mode_t mode ]);
 > `[ ]`(대괄호)는 생략가능 (optional 을 의미)
 
 > `printf()`의 리턴값도 `int`임
+>
 > `int printf();`
+>
 > ex) `"hello"`이면 `5`가 리턴됨
 
 > [!note] 
-> 파일 디스크립터
+> **파일 디스크립터**
 > - open한 파일들을 구분하기 위해 내부적으로 사용하는 번호
 > - 열린 파일을 나타내는 번호
 > - 파일을 번호로 구분함 (디바이스도 파일)
 > - 디스크립터: '묘사'
 
-
+---
 
 #### oflag (오픈 플래그)
 
@@ -381,7 +400,7 @@ int open (const char *path, int oflag, [ mode_t mode ]);
 > 	- `echo $PATH`
 > 	- `:`(콜론)으로 구분됨
 
-
+---
 
 #### 파일 열기의 예
 ```c
@@ -403,6 +422,7 @@ if ((fd = open("tmpfile", O_WRONLY|O_CREAT|O_EXCL, 0666))==-1)
 
 `0600` → 파일 권한을 권한을 나타낸 것 (8진수)
 
+---
 #### cf) 진수 표기 방법
 (based)
 
@@ -424,7 +444,7 @@ int main(){
 }
 ```
 
-
+---
 #### cf) `return`과 `exit`
 C언어의 문법을 지켜서 작성되면
 실행 파일이 생성됨
@@ -458,6 +478,7 @@ a()
 }
 ```
 
+---
 
 ## 실습 - `fopentest.c`
 - `open()`을 이용해 파일을 열고, 파일 열기에 성공한 경우 파일 디스크립트(fd)를 출력하는 프로그램
@@ -490,6 +511,7 @@ int main(int argc, char *argv[])
 #include <fcntl.h>
 ```
 
+---
 
 #### cf) 리눅스 man 숫자의 의미
 - `3`은 C 라이브러리 `man fopen`
@@ -543,14 +565,15 @@ ssize_t read (int fd, void *buf, size_t nbytes);
 	- 버퍼
 
 > 버퍼의 데이터 타입은 `char`.
+>
 > 파일은 바이트들의 나열이기 때문
 
 
 > [!note] 
-> 프로토타입(prototype)
-> 사용자 정의 함수
+> **프로토타입(prototype)**
+> : 사용자 정의 함수
 
-
+---
 
 #### cf) 인터프린터형 언어와 컴파일형 언어
 - **인터프린터형 언어**
@@ -560,7 +583,7 @@ ssize_t read (int fd, void *buf, size_t nbytes);
 
 > C언어에는 `char`, `int`, `long`, `unsigned` 등 10가지가 있음
 
-
+---
 #### 예제 - `fsize.c`
 - 파일을 읽고 파일의 사이즈를 출력하는 프로그램
 - 파일은 바이트의 연속이므로 리턴 타입으로 `char`가 사용됨
