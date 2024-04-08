@@ -1,7 +1,7 @@
 # System Programming
 ![welcome image](./md/welcome.png)
 
-| 주차 | 강의 내용 |
+| 주차 | 내용 |
 |------|-----------|
 | 1주차 | OT |
 | 2주차 | Linux 소개, WSL |
