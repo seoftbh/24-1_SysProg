@@ -46,69 +46,24 @@ make -v  # 버전 확인
 ---
 
 ### 예제 1)
-hello.h
-```c title:"hello.h"
-#ifndef HELLO_H
-#define HELLO_H
+- `Makefile`
+- `main.c`
+	- `hello.c`
+		- `hello.h`
+	- `world.c`
+		- `world.h`
 
-void say_hello();
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make1/hello.h#L4-L6
 
-#endif
-```
-hello.c
-```c title:"hello.c"
-#include <stdio.h>
-#include "hello.h"
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make1/hello.c#L2-L6
 
-void say_hello(){
-    printf("Hello ");
-}
-```
-world.h
-```c title:"world.h"
-#ifndef WORLD_H
-#define WORLD_H
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make1/world.h#L4-L6
 
-void say_world();
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make1/world.c#L2-L6
 
-#endif
-```
-world.c
-```c title:"world.c"
-#include <stdio.h>
-#include "world.h"
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make1/main.c#L1-L9
 
-void say_world(){
-    printf("World!!!\n");
-}
-```
-main.c
-```c title:"main.c"
-#include "hello.h"
-#include "world.h"
-
-int main(){
-    say_hello();
-    say_world();
-
-    return 0;
-}
-```
-Makefile
-``` title:"Makefile"
-app.out: hello.o world.o main.o
-	gcc -o app.out hello.o world.o main.o
-
-hello.o: hello.h hello.c
-	gcc -c -o hello.o hello.c
-
-world.o: world.h world.c
-	gcc -c -o world.o world.c
-
-main.o: hello.h world.h main.c
-	gcc -c -o main.o main.c
-```
-
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make1/Makefile#L1-L11
 
 > [!warning]
 > **인덴트(들여쓰기)에 주의**
@@ -157,53 +112,24 @@ make clean
 ---
 
 ### 예제2)
-hello.c
-```c title:"hello.c"
-#include <stdio.h>
+- `hello.c`
+- `makefile`
 
-int main(){
-    printf("Hello, Make!");
-    return 0;
-}
-```
-makefile
-``` title:"makefile"
-hello: hello.c
-	gcc -o hello hello.c
-```
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make2/hello.c#L3-L6
+
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make2/Makefile#L1-L2
 
 ![예제2 - make 실행 결과 이미지](./md/image-1.png)
 
 ---
 
 ### 예제 3) 조건문과 루프
+- `hello.c`
+- `makefile`
 
-```c title:"hello.c"
-#include <stdio.h>
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make3/hello.c#L3-L6
 
-int main(){
-    printf("Hello Make");
-    return 0;
-}
-```
-
-``` title:"makefile"
-CC = gcc
-CFLAGS = -Wall
-SOURCES = hello.c
-
-all: hello
-OBJECTS = $(SOURCES:.c=.o)
-
-hello: $(OBJECTS)
-	$(CC) $(CFLAGS) -o hello $(OBJECTS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-clean:
-	rm -f hello $(OBJECTS)
-```
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make3/makefile#L1-L15
 
 ![예제3 - make 실행 결과 이미지](./md/image-2.png)
 
@@ -211,6 +137,8 @@ clean:
 
 ### 예제 4) makefile 없이 실행하기
 - 내장된 기능을 사용
+
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/make4/hello.c#L3-L6
 
 ```bash
 make hello
@@ -432,17 +360,7 @@ if ((fd = open("tmpfile", O_WRONLY|O_CREAT|O_EXCL, 0666))==-1)
 | `0x` | 16진수 | `0x600` (= 1536) |
 | 없음   | 10진수 | `600` (= 600)    |
 
-test.c
-```c 
-#include <stdio.h>
-
-int main(){
-    printf("%d\n", 0600);
-    printf("%d\n", 0x600);
-    printf("%d\n", 600);
-    return 0;
-}
-```
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/test.c#L3-L8
 
 ---
 #### cf) `return`과 `exit`
@@ -484,24 +402,7 @@ a()
 - `open()`을 이용해 파일을 열고, 파일 열기에 성공한 경우 파일 디스크립트(fd)를 출력하는 프로그램
 ![fopentest.c 실행 결과 이미지](./md/image-6.png)
 
-fopentest.c
-```c title:"fopentest.c"
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-int main(int argc, char *argv[])
-{
-	int fd;
-	if ((fd = open(argv[1], O_RDWR)) == -1)
-		printf("파일 열기 오류\n");
-	else printf("파일 %s 열기 성공 : %d\n", argv[1], fd);
-
-	close(fd);
-	exit(0);
-} 
-
-```
+https://github.com/seoftbh/24-1_SysProg/blob/1bc0708c90998aac0e871d9e12e0def3adaad71e/week05/0402/fopentest.c#L1-L17
 
 `open()`을 사용하기위한 헤더 부분
 ```
