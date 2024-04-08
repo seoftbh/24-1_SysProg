@@ -29,7 +29,7 @@
 ## Makefile
 - 많은 파일을 한 번에 컴파일(빌드) 가능
 ### 설치
-```bash
+```shell
 sudo apt-get install gcc make  # make 설치
 make -v  # 버전 확인
 ```
