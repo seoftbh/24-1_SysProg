@@ -284,17 +284,7 @@ ssize_t write (int fd, void *buf, size_t nbytes);
 	- `int`(4Byte)
 	- ⇒ 1 * 24 + 4 + 4 = 32
 
-```c title:"student.h"
-#define MAX 24
-#define START_ID 1401001
-
-// student 구조체 정의
-struct student {
-    char name[MAX];
-    int id;
-    int score;
-};
-```
+https://github.com/seoftbh/24-1_SysProg/blob/cd1c439625ac09110f7f3d4745ba3a8cdafa1245/week06/dbExample/student.h#L1-L11
 
 ---
 ## `dbcreate.c`
@@ -321,35 +311,7 @@ struct student {
 
 ### 소스 코드
 
-```c title:"dbcreate.c"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "student.h"
-
-/* 학생 정보를 입력받아 데이터베이스 파일에 저장한다. */
-int main(int argc, char *argv[])
-{
-    int fd;
-    struct student record;
-    if (argc < 2) {
-        fprintf(stderr, "사용법 : %s file\n", argv[0]);
-        exit(1);
-    }
-    if ((fd = open(argv[1], O_WRONLY|O_CREAT|O_EXCL, 0640)) == -1) {
-        perror(argv[1]);
-        exit(2);
-    }
-    printf("%-9s %-8s %-4s\n", "학번", "이름", "점수");
-    while (scanf("%d %s %d", &record.id, record.name, &record.score) == 3) {
-        lseek(fd, (record.id - START_ID) * sizeof(record), SEEK_SET);
-        write(fd, (char *) &record, sizeof(record) );
-    }
-    close(fd);
-    exit(0);
-}
-```
+https://github.com/seoftbh/24-1_SysProg/blob/cd1c439625ac09110f7f3d4745ba3a8cdafa1245/week06/dbExample/dbcreate.c#L1-L37
 
 ### 주요 라인
 ```c
@@ -416,47 +378,7 @@ write(fd, (char *) &record, sizeof(record));
 - 입력한 학번에 대한 학생 정보를 **조회**하고, 점수를 **수정**받음
 - **잘못된 입력**을 받은 경우 "입력 오류"를 출력하고 프로그램을 종료 시킴
 ### 소스 코드
-```c title:"dbupdate.c"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "student.h"
-/* 학번을 입력받아 해당 학생 레코드를 수정한다. */
-int main(int argc, char *argv[])
-{
-    int fd, id;
-    char c;
-    struct student record;
-    if (argc < 2) {
-        fprintf(stderr, "사용법 : %s file\n", argv[0]);
-        exit(1);
-    }
-    if ((fd = open(argv[1], O_RDWR)) == -1) {
-        perror(argv[1]);
-        exit(2);
-    }
-    do {
-        printf("수정할 학생의 학번 입력: ");
-        if (scanf("%d", &id) == 1) {
-            lseek(fd, (long) (id-START_ID)*sizeof(record), SEEK_SET);
-            if ((read(fd, (char *) &record, sizeof(record)) > 0) && (record.id != 0)) {
-                printf("학번:%8d\t 이름:%4s\t 점수:%4d\n",
-                    record.id, record.name, record.score);
-                printf("새로운 점수: ");
-                scanf("%d", &record.score);
-                lseek(fd, (long) -sizeof(record), SEEK_CUR);
-                write(fd, (char *) &record, sizeof(record));
-            } else printf("레코드 %d 없음\n", id);
-        } else printf("입력오류\n");
-        printf("계속하겠습니까?(Y/N)");
-        scanf(" %c",&c);
-    } while (c == 'Y');
-    close(fd);
-    exit(0);
-}
-
-```
+https://github.com/seoftbh/24-1_SysProg/blob/cd1c439625ac09110f7f3d4745ba3a8cdafa1245/week06/dbExample/dbupdate.c#L1-L52
 
 ### 주요 라인
 
@@ -492,43 +414,7 @@ if ((read(fd, (char *) &record, sizeof(record)) > 0) && (record.id != 0)) {
 - 학생 정보가 **파일에 존재하지 않을 경우**, "레코드 없음" 메시지를 표시
 
 ### 소스 코드
-```c title:"dbquery.c"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "student.h"
-
-/* 학번을 입력받아 해당 학생의 레코드를 파일에서 읽어 출력한다. */
-int main(int argc, char *argv[])
-{
-    int fd, id;
-    struct student record;
-    if (argc < 2) {
-        fprintf(stderr, "사용법 : %s file\n", argv[0]);
-        exit(1);
-    }
-    if ((fd = open(argv[1], O_RDONLY)) == -1) {
-        perror(argv[1]);
-        exit(2);
-    }
-    do {
-        printf("\n검색할 학생의 학번 입력:");
-        if (scanf("%d", &id) == 1) {
-            lseek(fd, (id-START_ID)*sizeof(record), SEEK_SET);
-            if ((read(fd, (char *) &record, sizeof(record)) > 0) && (record.id != 0))
-                printf("이름:%s\t 학번:%d\t 점수:%d\n", record.name, record.id, 
-                    record.score);
-        else printf("레코드 %d 없음\n", id);
-        } else printf("입력 오류");
-        printf("계속하겠습니까?(Y/N)");
-        scanf(" %c", &c);
-    } while (c=='Y');
-    close(fd);
-    exit(0);
-}
-
-```
+https://github.com/seoftbh/24-1_SysProg/blob/cd1c439625ac09110f7f3d4745ba3a8cdafa1245/week06/dbExample/dbquery.c#L1-L47
 
 ### 주요 코드 라인
 ```c
