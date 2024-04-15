@@ -553,5 +553,5 @@ int main(int argc, char *argv[])
 - 3번부터 사용할 수 있음
 - FD를 이용해 파일 처리함
 - file path를 사용하면 길어지므로 숫자로 관리하는 것
-- `open()`의 러턴 타입은 `int`. open을 할 때마다 숫자가 증가함
+- `open()`의 리턴 타입은 `int`, open을 할 때마다 숫자가 증가함
 
