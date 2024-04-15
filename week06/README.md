@@ -423,3 +423,6 @@ lseek(fd, (id-START_ID)*sizeof(record), SEEK_SET);
 - 파일 위치 포인터 이동
 
 ---
+
+## 실행 과정
+![flowchart](./md/dbExample(c_lang).png)
