@@ -258,8 +258,7 @@ struct stat {
 - `S_ISLNK()`: 심볼릭 링크
 
 #### `ftype.c`
-```c
-```
+https://github.com/seoftbh/24-1_SysProg/blob/5637118763a7923fb4c0ddaa84d44e18c563c72f/week07plus/ftype.c#L1-L35
 
 ---
 ### 파일 사용 권한(File permissions)
@@ -316,8 +315,7 @@ int fchmod(int fd, mode_t mode);
 - `S_IROTH`(other-read), `S_IWOTH`(other-write), `S_IXOTH`(other-execute)
 
 ### chmod 구현 (`fchmod.c`)
-```c
-```
+https://github.com/seoftbh/24-1_SysProg/blob/5637118763a7923fb4c0ddaa84d44e18c563c72f/week07plus/fchmod.c#L1-L17
 
 ---
 
@@ -364,5 +362,4 @@ struct utimbuf {
 - 각 필드는 `1970-1-1 00:00` 부터 현재까지의 경과 시간을 초로 환산한 값
 
 #### `cptime.c`
-```
-```
+https://github.com/seoftbh/24-1_SysProg/blob/5637118763a7923fb4c0ddaa84d44e18c563c72f/week07plus/cptime.c#L1-L28
