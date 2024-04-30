@@ -121,6 +121,7 @@
 - 배포판 설치
 - Wubi를 이용한 우분투 설치
 - 원격 로그인(telnet, PuTTy 등)
+- WSL(Windows Subsystem for Linux)
 
 
 ## 시스템 관리자
