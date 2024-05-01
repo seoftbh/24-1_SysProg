@@ -5,6 +5,7 @@
 - 파일 작업을 마친 후에는 파일을 닫고 프로그램을 종료
 
 ### 소스코드
+https://github.com/seoftbh/24-1_SysProg/blob/ed125e40bc4e1c9c8420a6b2ee7d3105bb093131/week05plus/fopen.c#L1-L17
 
 ### 실행 결과
 ![fopen demo image](./md/fopen.png)
@@ -20,6 +21,7 @@
     - 각 반복마다 읽은 바이트 수를 `total`에 더함
 
 ### 소스코드
+https://github.com/seoftbh/24-1_SysProg/blob/ed125e40bc4e1c9c8420a6b2ee7d3105bb093131/week05plus/fsize.c#L1-L24
 
 ### 실행 결과
 ![fsize demo image](./md/fsize.png)
@@ -34,6 +36,7 @@
     - 파일 접근 권한은 0644(사용자: 읽기/쓰기, 그룹:읽기, 기타: 읽기)
 
 ### 소스코드
+https://github.com/seoftbh/24-1_SysProg/blob/ed125e40bc4e1c9c8420a6b2ee7d3105bb093131/week05plus/copy.c#L1-L30
 
 ### 실행 결과
 ![copy demo image](./md/copy.png)
@@ -44,6 +47,7 @@
 - `dup()` 함수로 파일 디스크립터를 복제한 뒤, 각 디스크립터를 사용하여 파일에 문자열을 기록함
 
 ### 소스코드
+https://github.com/seoftbh/24-1_SysProg/blob/ed125e40bc4e1c9c8420a6b2ee7d3105bb093131/week05plus/dup.c#L1-L15
 
 ### 실행 결과
 ![dup demo image](./md/dup.png)
