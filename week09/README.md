@@ -39,6 +39,7 @@ struct dirent *readdir(DIR *dp);
 - 디렉터리 읽기 함수
 
 ### 예제) `list1.c`
+https://github.com/seoftbh/24-1_SysProg/blob/ae1d284942e2bb5b40bd01137507d34cd17f99e4/week09plus/list1.c#L1-L37
 
 ## `st_mode` 필드
 ![alt text](./md/image-1.png)
@@ -55,6 +56,7 @@ struct dirent *readdir(DIR *dp);
 	- others (3bit)
 
 ### 예제) `list2.c`
+https://github.com/seoftbh/24-1_SysProg/blob/ae1d284942e2bb5b40bd01137507d34cd17f99e4/week09plus/list2.c#L1-L93
 
 ---
 ## 디렉터리 생성
@@ -107,8 +109,10 @@ int unlink(char *path);
 ![alt text](./md/image-3.png)
 
 ### 예제) `link.c`
+https://github.com/seoftbh/24-1_SysProg/blob/ae1d284942e2bb5b40bd01137507d34cd17f99e4/week09plus/link.c#L1-L11
 
 ### 예제) `unlink.c`
+https://github.com/seoftbh/24-1_SysProg/blob/ae1d284942e2bb5b40bd01137507d34cd17f99e4/week09plus/unlink.c#L1-L13
 
 ## 링크의 종류
 - ### 하드 링크(hard link)
@@ -148,7 +152,7 @@ int readlink (const char *path, char *buf, size_t bufsize);
 ```
 
 ### 예제) `rlink.c`
-
+https://github.com/seoftbh/24-1_SysProg/blob/8cf6f77b45091dda4f53d8b345f5c0a0b3a1f1d3/week09plus/rlink.c#L1-L18
 
 ---
 # 파일 시스템 핵심 개념 정리
