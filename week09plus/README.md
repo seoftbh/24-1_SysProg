@@ -11,6 +11,7 @@
 
 
 ### 소스 코드
+https://github.com/seoftbh/24-1_SysProg/blob/576f7bb2535f9b10320fb23ce589195a22d5e451/week09plus/list1.c#L1-L37
 
 ### 실행 결과
 ![list1 demo image](./md/list1.png)
@@ -29,6 +30,7 @@
 - `ctime()`: 시간을 나타내는 time_t 값을 사람이 읽을 수 있는 문자열로 변환함
 
 ### 소스 코드
+https://github.com/seoftbh/24-1_SysProg/blob/576f7bb2535f9b10320fb23ce589195a22d5e451/week09plus/list2.c#L1-L93
 
 ### 실행 결과
 ![list2 demo image](./md/list2.png)
@@ -40,6 +42,9 @@
 - `int unlink(char *path);`
 
 ### 소스 코드
+https://github.com/seoftbh/24-1_SysProg/blob/576f7bb2535f9b10320fb23ce589195a22d5e451/week09plus/link.c#L1-L11
+
+https://github.com/seoftbh/24-1_SysProg/blob/576f7bb2535f9b10320fb23ce589195a22d5e451/week09plus/unlink.c#L1-L13
 
 ### 실행 결과
 ![link-unlink demo image](./md/link-unlink.png)
