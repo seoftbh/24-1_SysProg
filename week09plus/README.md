@@ -59,6 +59,7 @@ https://github.com/seoftbh/24-1_SysProg/blob/576f7bb2535f9b10320fb23ce589195a22d
     - `buffer`에 저장된 데이터를 표준 출력에 쓰고, 쓴 바이트 수만큼 출력함
 
 ### 소스 코드
+https://github.com/seoftbh/24-1_SysProg/blob/8cf6f77b45091dda4f53d8b345f5c0a0b3a1f1d3/week09plus/rlink.c#L1-L18
 
 ### 실행 결과
 ![rlink demo image](./md/rlink.png)
