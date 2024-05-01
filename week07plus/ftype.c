@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 /* 파일 타입을 검사한다. */
 int main(int argc, char *argv[])
 {

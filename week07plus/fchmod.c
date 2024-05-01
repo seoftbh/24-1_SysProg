@@ -2,8 +2,9 @@
 #include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 /* 파일 사용권한을 변경한다. */
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     long strtol();
     int newmode;
