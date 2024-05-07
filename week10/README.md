@@ -228,11 +228,11 @@
 		- `ro`(read only), `rw`(read & write), ...
 	- `-a`: `/etc/fstab`에 기술된 모든 파일 시스템을 마운트
 - ### 사용 예제
-	- `{bash} sudo mount -o remount,ro /dev/sda1`
+	- `sudo mount -o remount,ro /dev/sda1`
 		- `/dev/sda1`을 읽기 전용으로 재마운트
-	- `{bash} sudo mount -t ext4 /dev/xvda2 /`
+	- `sudo mount -t ext4 /dev/xvda2 /`
 		- `ext4` 파일 시스템으로 포맷된 `/dev/xvd2` 파티션을 `/`에 마운트
-	- `{bash} sudo mount -t iso9660 -o ro Win11_23H2_x64.iso /mnt/iso`
+	- `sudo mount -t iso9660 -o ro Win11_23H2_x64.iso /mnt/iso`
 - ### 참고) unmount
 	- `unmount 장치명`, `unmount 디렉터리명`
 
