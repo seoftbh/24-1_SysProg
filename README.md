@@ -11,3 +11,4 @@
 | 6주차 | [System Call](./week06/) |
 | 7주차 | [File System](./week07/), [예제 코드](./week07plus/) |
 | 9주차 | [Directory, Link](./week09/), [예제 코드](./week09plus/) |
+| 10주차 | [Linux File system, Disk management](./week10/) |
