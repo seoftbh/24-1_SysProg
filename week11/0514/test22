@@ -1,0 +1,12 @@
+#!/bin/bash
+# testing a bad command
+if asdfg
+then
+echo "it did not work"
+fi
+echo "we are outside of the if statement"
+$
+$ ./test2
+./test2: line 3: asdfg: command not found
+we are outside of the if statement
+
