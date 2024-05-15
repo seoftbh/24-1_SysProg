@@ -9,8 +9,7 @@ then
 fi
 if [ $val1 -eq $val2 ]
 then
-	echo “The values are equal”
+	echo "The values are equal"
 else
-	echo “The values are different”
+	echo "The values are different"
 fi
-
