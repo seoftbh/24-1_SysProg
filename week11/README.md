@@ -169,7 +169,7 @@ echo UID: $UID
 echo HOME: $HOME
 
 ```
-![](./md/test2.png.png)
+![](./md/test2.png)
 
 - `$USER`: 사용자 ID
 - `$UID`: UID
