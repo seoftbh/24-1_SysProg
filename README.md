@@ -13,3 +13,4 @@
 | 9주차 | [Directory, Link](./week09/), [예제 코드](./week09plus/) |
 | 10주차 | [Linux File system, Disk management](./week10/) |
 | 11주차 | [Shell Scripting](./week11/) |
+| 12주차 | [File & record lock, C 표준 파일 입출력, Process](./week12/) |
