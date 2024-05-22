@@ -215,13 +215,7 @@ printf("%c", charinput);
 ### 해결 방법 3
 - `scanf()`의 `%c`앞에 공백(` `)을 추가하기
 - 입력 스트림에서 공백(스페이스, 탭, 줄바꿈)을 건너뛰고, 다음 유효한 문자를 읽음
-```c
-// 예시
-scanf("%d", &numinput);
-printf("%d\n", numinput);
-scanf(" %c" ,&charinput);  // 개행문자 무시 후 문자 처리
-printf("%c", charinput);
-```
+https://github.com/seoftbh/24-1_SysProg/blob/76e84fc74b2958409a3831e26ff6ac392c03dcc2/week12/0521/scanfEx.c#L1-L12
 
 ![alt text](./md/image-2.png)
 
