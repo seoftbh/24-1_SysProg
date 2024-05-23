@@ -290,6 +290,8 @@ https://github.com/seoftbh/24-1_SysProg/blob/76e84fc74b2958409a3831e26ff6ac392c0
 ### `ps` - 프로세스 상태 출력
 - 현재 존재하는 프로세스들의 실행 상태를 요약해서 출력
 ![alt text](./md/image-3.png)
+> - PID는 운영체제가 부여함
+> - 동일한 명령(프로그램)임에도 실행 마다 PID가 달라진 모습
 
 ### `sleep`
 - 지정된 시간만큼 실행을 중지시킴
