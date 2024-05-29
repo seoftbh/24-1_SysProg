@@ -7,20 +7,20 @@
 ### 잠금 함수 `fcntl()` 이용
 - 해당 레코드를 읽기 전, 해당 레코드 영역에 읽기 잠금(`F_RDLCK`) 후 읽음
 ### 소스 코드
-
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch08/studentDB/rdlock.c#L1-L46
 
 ## `wrlock.c` - 잠금을 이용한 학생DB 수정
 ### 잠금 함수 `fcntl()` 이용
 - 해당 레코드를 읽기 전, 해당 레코드 영역에 쓰기 잠금(`F_WRLCK`) 후 수정함
 ### 소스 코드
-
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch08/studentDB/wrlock.c#L1-L50
 
 ---
 ## 파일 쓰기 잠금 예제
 파일 잠금을 통해 한 프로세스(왼쪽)가 사용하고 있을 때 다른 프로세스(오른쪽)가 접근하지 못하도록 함
 
 ![file_lock_example](./md/file_lock_example.gif)
-
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch08/filelockEx/file_lock.c#L1-L28
 
 ---
 ---
@@ -35,8 +35,10 @@
 	- 파일에 한 문자씩 출력
 
 ### 텍스트 파일 내용을 표준 출력에 프린트하기
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/charIO/filePrint.c#L1-L19
 
 ### 파일 복사
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/charIO/fileCopy.c#L1-L24
 
 ![alt text](./md/image-1.png)
 
@@ -51,6 +53,7 @@
 	- 문자열 `s`를 파일 포인터 `fp`가 가리키는 파일에 출력
 
 ### 텍스트 파일에 줄 번호를 붙여 출력하기
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/lineIO/lineNum.c#L1-L25
 
 ![alt text](./md/image-2.png)
 
@@ -63,8 +66,10 @@
 	- `int fscanf(FILE *fp, const char *format, ...)`
 	- 파일로부터 데이터 읽기
 ### 학생 정보를 읽어 텍스트에 저장하기
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/formatIO/studentWrite.c#L1-L19
 
 ### 텍스트 파일에서 학생 정보를 읽어 출력하기
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/formatIO/studentRead.c#L1-L19
 
 ![alt text](./md/image-3.png)
 
@@ -80,9 +85,12 @@
 
 ### 구조체를 이용해 학생 정보를 파일에 저장하기
 `stcreate1.c`, `student.h`
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/blockIO/stcreate1.c#L1-L19
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/blockIO/student.h#L1-L8
 
 ### 파일에 저장된 모든 학생 정보 읽어서 출력하기
 `stprint.c`
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/blockIO/stprint.c#L1-L27
 
 ![alt text](./md/image-4.png)
 
@@ -95,10 +103,13 @@
 ### 구조체를 이용한 학생 정보 저장, 조회하기
 레코드 단위로 이동
 `stcreate2.c`, `stquery.c`
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/filePosition/stcreate2.c#L1-L22
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/filePosition/stquery.c#L5-L39
 
 ### 저장된 학생 정보 수정하기
 레코드 수정
 `stupdate.c`
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/filePosition/stupdate.c#L1-L40
 
 ![alt text](./md/image-5.png)
 
@@ -111,6 +122,7 @@
 
 `buffer.c`
 ![alt text](./md/image-6.png)
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/cLibBuffer/buffer.c#L1-L41
 
 > [!tip]
 > #### `_IO_UNBUFFERED` 및 `_IO_LINE_BUF` 오류
@@ -140,6 +152,8 @@
 		- `_IONBF`: 버퍼 미사용 방식
 
 ![setbuf_example.gif](./md/setbuf_example.gif)
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/cLibBuffer/setbuf.c#L1-L19
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch09/cLibBuffer/setvbuf.c#L1-L16
 
 ---
 # Process
@@ -151,14 +165,18 @@
 	- `argv[]`: 명령줄 인수 리스트를 나타내는 포인터 배열
 
 ![alt text](./md/image-7.png)
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch10/args.c#L1-L10
 
 ## 환경 변수
 ### 모든 환경 변수 출력
 ![alt text](./md/image-8.png)
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch10/environ.c#L1-L11
 
 ### 환경 변수 개별 출력
 - `getenv()`를 이용하면 환경 변수를 하나씩 접근 가능
+
 ![alt text](./md/image-9.png)
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch10/printenv.c#L1-L14
 
 ## 프로그램 종료
 ### exit 처리기 예제
@@ -169,4 +187,5 @@
 	- `exit()`는 exit handler들을 등록된 역순으로 호출함
 
 ![alt text](./md/image-10.png)
+https://github.com/seoftbh/24-1_SysProg/blob/e439481f7006c707574d4176ca6a4a0dfaf13f8a/week12plus/ch10/exitHandlerEx.c#L1-L20
 
