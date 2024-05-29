@@ -19,7 +19,7 @@
 ## 파일 쓰기 잠금 예제
 파일 잠금을 통해 한 프로세스(왼쪽)가 사용하고 있을 때 다른 프로세스(오른쪽)가 접근하지 못하도록 함
 
-![file_lock_example](file_lock_example.gif)
+![file_lock_example](./md/file_lock_example.gif)
 
 
 ---
@@ -139,7 +139,7 @@
 		- `_IOLBF`: 줄 버퍼 방식
 		- `_IONBF`: 버퍼 미사용 방식
 
-![setbuf_example.gif](setbuf_example.gif)
+![setbuf_example.gif](./md/setbuf_example.gif)
 
 ---
 # Process
