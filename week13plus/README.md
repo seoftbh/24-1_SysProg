@@ -92,6 +92,7 @@ https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707
 
 ### `system()`함수 실행
 - `system()`함수로 셸 명령어를 실행할 수 있음
+
 `systemTest.c`
 ![alt text](./md/image-9.png)
 https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/system/systemTest.c#L1-L9
