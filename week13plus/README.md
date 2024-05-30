@@ -7,6 +7,8 @@
 	- 부모 프로세스의 ID 리턴
 	- 자신을 생성해준 부모 프로세스의 번호
 
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch10/pid.c#L1-L8
+
 ### `uid.c` - 프로세스의 사용자 ID 출력
 - 프로세스의 실제/유효 사용자 ID 반환
 	- `uid_t getuid()`: 프로세스의 실제 사용자 ID
@@ -14,6 +16,8 @@
 - 프로세스의 실제/유효 그룹 ID 반환
 	- `uid_t getgid()`: 프로세스의 실제 그룹 ID
 	- `uid_t getegid()`: 프로세스의 유효 그룹 ID
+
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch10/uid.c#L1-L12
 
 ### 실행 결과
 ![alt text](./md/image.png)
@@ -30,27 +34,30 @@
 ### 자식 프로세스 생성
 `fork1.c`
 ![alt text](./md/image-1.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/fork/fork1.c#L1-L10
 
 ### 부모 프로세스가 자식 프로세스 생성 후 서로 다른 메시지 출력
 `fork2.c`
 ![alt text](./md/image-2.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/fork/fork2.c#L1-L16
 
 ### 부모 프로세스가 두 개의 자식 프로세스 생성
 `fork3.c`
 ![alt text](./md/image-3.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/fork/fork3.c#L1-L20
 
 ## 프로세스 기다리기
 
 ### 부모 프로세스가 자식 프로세스 생성 후 끝나기를 기다림
-`forkWait.c`
-
 1. 부모 프로세스가 시작됨(PID:`219128`)
 2. `fork()`호출로 자식 프로세스가 생성됨(PID:`219129`)
 4. 부모 프로세스가 `wait()`함수를 호출해 자식 프로세스가 종료될 때까지 기다림
 3. 자식 프로세스가 종료 코드 1로 종료됨
 5. 자식 프로세스가 종료되면, 부모 프로세스가 자식 프로세스의 PID와 종료 코드를 출력함
 
+`forkWait.c`
 ![alt text](./md/image-4.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/wait/forkWait.c#L1-L20
 
 ### 2개의 자식 프로세스 기다리기
 1. 부모 프로세스가 시작됨(PID:`223542`)
@@ -61,21 +68,24 @@
 
 `waitPid.c`
 ![alt text](./md/image-5.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/wait/waitPid.c#L1-L30
 
 ## 프로그램 실행
 
 ### 자식 프로세스를 생성해 echo 명령어 실행
 `exec1.c`
 ![alt text](./md/image-6.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/exec/exec1.c#L1-L15
 
 ### 각각의 명령어를 실행하는 3개의 자식 프로세스 생성
 `exec2.c`
 ![alt text](./md/image-7.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/exec/exec2.c#L1-L27
 
 ### 명령줄 인수로 받은 명령 실행시키기
 `exec3.c`
 ![alt text](./md/image-8.png)
-
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/exec/exec3.c#L1-L22
 
 ---
 ## `system()` 함수
@@ -84,6 +94,7 @@
 - `system()`함수로 셸 명령어를 실행할 수 있음
 `systemTest.c`
 ![alt text](./md/image-9.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/system/systemTest.c#L1-L9
 
 ### `system()`함수 구현
 - 시스템 호출을 이용
@@ -96,3 +107,5 @@
 
 `systemCall.c`, `system.c`
 ![alt text](./md/image-10.png)
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/system/system.c#L1-L30
+https://github.com/seoftbh/24-1_SysProg/blob/710a9a69933734a9f9b0a0e978be79e3707b2eeb/week13plus/ch11/system/systemCall.c#L1-L15
